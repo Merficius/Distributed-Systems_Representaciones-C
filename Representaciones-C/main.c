@@ -9,7 +9,7 @@ char c1 = 'A';
 char c2 = 'B';
 
 
-int i = 16; // Variable global
+long i = 16; // Variable global
 
 char c3 = 'C';
 char c4 = 'D';
