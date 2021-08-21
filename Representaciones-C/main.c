@@ -5,14 +5,22 @@
 //  Created by José Mariano Portilla Landa on 16/08/21.
 //
 
+char c1 = 'A';
+char c2 = 'B';
+
+
 int i = 16; // Variable global
+
+char c3 = 'C';
+char c4 = 'D';
 
 #include <stdio.h>
 
 int f(void);
 
 int f() {
-    // Estudiar las representaciones big endian y little endian así como la alineación de datos en memoria principal
+    // Estudiar las representaciones big endian (motorola) y little endian (intel) así como la alineación de datos en memoria principal
+    // asi como la alineación de datos en memoria principal
     // Apuntador = 8 bytes = 16 hex = 64 bits
     // Char = 1 byte = 2 hex = 8 bits
     // Int = 4 bytes = 8 hex = 32 bits
@@ -38,6 +46,27 @@ int f() {
     printf("Valor del byte 2: %d\n", *(p2+1)); // Suma un byte porque el puntero es de tipo char
     
     printf("Valor de i: %d\n", i); // Valor antes de salir y que vamos a encontrar al regresar (+1)
+    
+    
+    char* pointer = &c1;
+    int j;
+    for (j = 0; j < 12; j++) {
+        printf("Dato %d: %d\n", j, pointer[j]);
+        // 0 -> 65 = 'A'
+        // 1 -> 66 = 'B'
+        // 2 -> 0 = not initialized
+        // 3 -> 0 = not initialized
+        // 4 -> 16 = i -> 16 -> started on multiple of 4 and takes 4 spaces
+        // 5 -> 1 = changed on exec time
+        // 6 -> 0 = not initialized
+        // 7 -> 0 = not initialized
+        // 8 -> 67 = 'B'
+        // 9 -> 68 = 'B'
+        // 10 -> 0 = not initialized
+        // 11 -> 0 = not initialized
+        
+        
+    }
     
     return 0;
 }
