@@ -23,13 +23,13 @@ int f() {
    *(p+1) = 1;
     
     printf("Dirección del byte 1: %p\n", p);
-    printf("Valor del byte 1: %d\n", *p);
+    printf("Valor del byte 1: %d\n", p[0]);
     printf("Dirección del byte 2: %p\n", p+1);
-    printf("Valor del byte 2: %d\n", *(p+1)); // Suma un byte porque el puntero es de tipo char
+    printf("Valor del byte 2: %d\n", p[1]); // Suma un byte porque el puntero es de tipo char
     printf("Dirección del byte 3: %p\n", p+2);
-    printf("Valor del byte 3: %d\n", *(p+2));
+    printf("Valor del byte 3: %d\n", p[2]);
     printf("Dirección del byte 4: %p\n", p+3);
-    printf("Valor del byte 4: %d\n", *(p+3));
+    printf("Valor del byte 4: %d\n", p[3]);
     
     // Si utilizamos puntero de tipo int, entonces avanzamos 4 bytes cada vez que sumamos 1
     printf("Dirección del byte 1: %p\n", p2);
